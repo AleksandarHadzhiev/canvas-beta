@@ -18,7 +18,7 @@ jobs:
       run: pip install pipenv
     - name: Install dependencies
       run: |
-        pipenv install --dev
+        pipenv install
     - name: Set PYTHONPATH
       run: echo "PYTHONPATH=$(pwd)/backend" >> $GITHUB_ENV
     - name: Analysing the code with pylint
