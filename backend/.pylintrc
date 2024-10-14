@@ -1,0 +1,53 @@
+[MASTER]
+# List of modules or packages to be analyzed.
+init-hook='import sys; sys.path.append(".")'
+
+# A comma-separated list of package names to be considered as 
+# built-in modules.
+extension-pkg-whitelist=
+
+# Set the output format for the report (text, parseable, colorized, json, html, etc.)
+output-format=text
+
+# Regular expression pattern matching the names of the modules to be 
+# ignored (e.g. '.*test.*').
+ignore-patterns=
+
+# A comma-separated list of names of Pylint plugins to load.
+load-plugins=
+
+# Run the analysis on the entire package (including sub-packages).
+recursive=true
+
+[FORMAT]
+# Maximum number of characters on a single line.
+max-line-length=100
+
+[MESSAGES CONTROL]
+# List of message types to disable.
+disable=
+
+# Enable the following messages for development purposes.
+enable=missing-docstring, invalid-name, too-few-public-methods, too-many-arguments, too-many-instance-attributes
+
+[REPORTS]
+# Disable the report for the number of statements in the code.
+reports=no
+
+[LOGGING]
+# Logging module to be used.
+logging-modules=logging
+
+[DESIGN]
+# Maximum number of return statements in a function.
+max-returns=3
+
+# Maximum number of arguments for a function.
+max-args=5
+
+# Maximum number of public methods in a class.
+max-public-methods=20
+
+[TYPECHECK]
+# Tolerance for the type of checks
+ignored-modules=
