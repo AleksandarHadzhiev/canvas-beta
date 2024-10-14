@@ -20,6 +20,7 @@ jobs:
       run: |
         pipenv install
         pipenv install pylint --dev  # Explicitly install pylint here
+        pipenv install fastapi[standard] uvicorn
     - name: List installed packages
       run: pipenv run pip list
     - name: Set PYTHONPATH
