@@ -1,13 +1,18 @@
 """Init the booting file for the FastAPI backend."""
 from fastapi import FastAPI, Depends
-from .dependencies import  get_query_token
-from .db_conn import DBConnector
+
+from app.dependencies import  get_query_token
+from app.db_conn import DBConnector
+from app.routers import organization
 
 app = FastAPI(dependencies=[Depends(get_query_token)])
+db = DBConnector()
+app.include_router(organization.router)
 @app.on_event("startup")
 def on_startup():
-    db = DBConnector()
+    """Initiate thd DB on startup"""
     db.create_db_and_tables()
+
 @app.get('/')
 async def root():
     """Basic endpoint.
