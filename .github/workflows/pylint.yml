@@ -24,5 +24,6 @@ jobs:
     - name: Set PYTHONPATH
       run: echo "PYTHONPATH=$(pwd)/backend" >> $GITHUB_ENV
     - name: Analysing the code with pylint
+      working-directory: ./backend
       run: |
         pipenv run pylint $(git ls-files '*.py')
