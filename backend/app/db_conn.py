@@ -25,3 +25,6 @@ class DBConnector:
         """
         with Session(self.engine) as session:
             yield session
+
+
+db = DBConnector()
